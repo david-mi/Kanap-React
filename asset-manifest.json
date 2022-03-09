@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kanap-React/static/css/main.f2ad3c05.css",
+    "main.js": "/Kanap-React/static/js/main.a841db9d.js",
+    "index.html": "/Kanap-React/index.html",
+    "main.f2ad3c05.css.map": "/Kanap-React/static/css/main.f2ad3c05.css.map",
+    "main.a841db9d.js.map": "/Kanap-React/static/js/main.a841db9d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2ad3c05.css",
+    "static/js/main.a841db9d.js"
+  ]
+}
