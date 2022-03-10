@@ -3,7 +3,7 @@ const Footer = () => (
     <div className="limitedWidthBlockContainer footerMain">
       <div className="limitedWidthBlock">
         <div>
-          <img className="logo" src="/images/logo.png" alt="Logo de l'entreprise" />
+          <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Logo de l'entreprise" />
         </div>
         <div>
           <p>10 quai de la charente <br />75019 Paris 19</p>
