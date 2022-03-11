@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Kanap-React/static/css/main.f2ad3c05.css",
-    "main.js": "/Kanap-React/static/js/main.87ba62d6.js",
+    "main.js": "/Kanap-React/static/js/main.092febdb.js",
     "index.html": "/Kanap-React/index.html",
     "main.f2ad3c05.css.map": "/Kanap-React/static/css/main.f2ad3c05.css.map",
-    "main.87ba62d6.js.map": "/Kanap-React/static/js/main.87ba62d6.js.map"
+    "main.092febdb.js.map": "/Kanap-React/static/js/main.092febdb.js.map"
   },
   "entrypoints": [
     "static/css/main.f2ad3c05.css",
-    "static/js/main.87ba62d6.js"
+    "static/js/main.092febdb.js"
   ]
 }
