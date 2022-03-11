@@ -14,8 +14,6 @@ const Confirmation = () => {
 
   const { sucessOrder } = useContext(GlobalContext);
 
-  console.log(sucessOrder);
-
   useEffect(() => {
     if (sucessOrder) localStorage.clear();
   }, [sucessOrder]);

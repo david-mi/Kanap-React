@@ -16,7 +16,7 @@ const Card = () => {
 
   const [basket, setBasket] = useState([]);
   const [apiData, setApiData] = useState(null);
-  const [mergeData, setMergeData] = useState(null);
+  const [mergeData, setMergeData] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
   const [kanapIds, setKanapIds] = useState(null);
@@ -29,7 +29,6 @@ const Card = () => {
   useEffect(() => {
 
     if (basket.length) {
-      console.log('ptdr');
       const getapiData = async () => {
         const res = await axios.get(apiKanaps);
         const { data } = res;
@@ -53,7 +52,7 @@ const Card = () => {
 
   useEffect(() => {
 
-    if (mergeData) {
+    if (mergeData.length) {
       const calcTotalPrice = mergeData.reduce((acc, el) => {
         const { price, quantity } = el;
         const calc = price * quantity;
@@ -73,8 +72,8 @@ const Card = () => {
     <main className="limitedWidthBlockContainer">
       <div className="limitedWidthBlock" id="limitedWidthBlock">
         <div className="cartAndFormContainer" id="cartAndFormContainer">
-          <h1>{mergeData ? "Votre panier" : "Panier Vide"}</h1>
-          {mergeData && (
+          <h1>{mergeData.length ? "Votre panier" : "Panier Vide"}</h1>
+          {mergeData.length && (
             <section className="cart">
               {mergeData.map((elem, idx) => <CardItem data={{ ...elem, mergeData, setMergeData }} key={idx} />)}
               <div className="cart__price">
