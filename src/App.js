@@ -1,6 +1,7 @@
 // LIBRARIES
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 // COMPONENTS & PAGES
 import Home from './components/Home/Home';
@@ -27,10 +28,11 @@ const App = () => {
       <GlobalContext.Provider value={{ sucessOrder, setSucessOrder }}>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/product/:id' element={<Product />} />
-          <Route path='/card' element={<Card />} />
-          <Route path='/confirmation/:orderId' element={<Confirmation />} />
+          <Route path='/Kanap-React/' element={<Home />} />
+          <Route path='/Kanap-React/product/:id' element={<Product />} />
+          <Route path='/Kanap-React/card' element={<Card />} />
+          <Route path='/Kanap-React/confirmation/:orderId' element={<Confirmation />} />
+          <Route path="*" element={<Navigate replace to="/Kanap-React/" />}></Route>
         </Routes>
         <Footer />
       </GlobalContext.Provider>

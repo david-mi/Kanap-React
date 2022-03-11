@@ -33,7 +33,7 @@ const CardOrder = ({ kanapIds }) => {
       const res = await axios.post(apiOrder, { contact, products: kanapIds });
       const { data } = res;
       setSucessOrder(true);
-      navigate(`/confirmation/${data.orderId}`);
+      navigate(`/Kanap-React/confirmation/${data.orderId}`);
     }
     catch (err) {
       setApiError("Une erreur s'est produite");
