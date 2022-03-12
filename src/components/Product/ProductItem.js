@@ -1,5 +1,5 @@
 // LIBRARIES
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // CSS
 import '../../styles/product.css';
@@ -8,9 +8,11 @@ const ProductItem = ({ data }) => {
 
   const { name, colors, description, imageUrl, price, altTxt } = data;
   const id = data._id;
+  console.log(imageUrl);
 
-  const [color, setColor] = useState(null);
+  const [color, setColor] = useState(colors[0]);
   const [quantity, setQuantity] = useState(1);
+  const [image, setImage] = useState(null);
 
   const addColor = (elem) => {
     const clr = elem.target.value;
@@ -27,19 +29,40 @@ const ProductItem = ({ data }) => {
   const addToBasket = (elem) => localStorage.setItem('basket', JSON.stringify(elem));
 
   const addKanap = () => {
-    const basket = getBasket();
-    const find = basket.find(product => product.id === id && product.color === color);
-    find
-      ? find.quantity = quantity
-      : basket.push({ quantity, color, id });
-    addToBasket(basket);
+    if (color && quantity) {
+      const basket = getBasket();
+      const find = basket.find(product => product.id === id && product.color === color);
+      find
+        ? find.quantity = quantity
+        : basket.push({ quantity, color, id });
+      addToBasket(basket);
+
+      find
+        ? alert(`Quantité du canapé ${name} ${color} modifié : ${quantity}`)
+        : alert(`Canapé ${name} ${color} x${quantity} ajouté au panier`);
+    }
+    else {
+      alert('Veuillez choisir une couleur une quanitité pour votre produit');
+    }
+
   };
 
+  useEffect(() => {
+    console.log('color :' + color);
+    if (color) {
+      console.log('couleur !!');
+      console.log(imageUrl[color]);
+      setImage(imageUrl[color]);
+    } else {
+      console.log(colors);
+      setImage(imageUrl[colors[0]]);
+    }
+  }, [color]);
 
   return (
     <article>
       <div className="item__img">
-        <img src={imageUrl} alt={altTxt} />
+        <img src={image} alt={altTxt} />
       </div>
       <div className="item__content">
 
@@ -57,7 +80,6 @@ const ProductItem = ({ data }) => {
           <div className="item__content__settings__color">
             <label htmlFor="color-select">Choisir une couleur :</label>
             <select name="color-select" id="colors" onChange={addColor}>
-              <option defaultValue={null}>--SVP, choisissez une couleur --</option>
               {colors.map((clr, idx) => (
                 <option key={idx} value={clr}>{clr}</option>
               ))}
@@ -66,7 +88,7 @@ const ProductItem = ({ data }) => {
 
           <div className="item__content__settings__quantity">
             <label htmlFor="itemQuantity">Nombre d'article(s) (1-100) :</label>
-            <input onChange={addQuantity} type="number" name="itemQuantity" min="1" max="100" defaultValue="0" id="quantity" />
+            <input onChange={addQuantity} type="number" name="itemQuantity" min="1" max="100" defaultValue="1" id="quantity" />
           </div>
         </div>
         <div className="item__content__addButton">

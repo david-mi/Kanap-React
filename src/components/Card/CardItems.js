@@ -23,7 +23,7 @@ const CardItem = ({ data }) => {
     <section id="cart__items">
       <article className="cart__item" data-id={id} data-color={color}>
         <div className="cart__item__img">
-          <img src={imageUrl} alt={altTxt} />
+          <img src={imageUrl[color]} alt={altTxt} />
         </div>
         <div className="cart__item__content">
           <div className="cart__item__content__description">

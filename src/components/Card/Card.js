@@ -32,6 +32,7 @@ const Card = () => {
       const getapiData = async () => {
         const res = await axios.get(apiKanaps);
         const { data } = res;
+        console.log(data);
         setApiData(data);
       };
 

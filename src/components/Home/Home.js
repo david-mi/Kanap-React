@@ -30,6 +30,7 @@ const Home = () => {
 
   useEffect(() => {
     setImagesLoading(true);
+    console.log(counter);
     if (apiData && counter === apiData.length) {
       setImagesLoading(false);
     }
