@@ -21,8 +21,8 @@ const Header = () => (
         </NavLink>
         <nav>
           <ul>
-            <NavLink to="/Kanap-React/"><li>Accueil</li></NavLink>
-            <NavLink to="/Kanap-React/card"><li>Panier</li></NavLink>
+            <NavLink to="/"><li>Accueil</li></NavLink>
+            <NavLink to="/card"><li>Panier</li></NavLink>
           </ul>
         </nav>
       </div>

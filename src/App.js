@@ -28,11 +28,11 @@ const App = () => {
       <GlobalContext.Provider value={{ sucessOrder, setSucessOrder }}>
         <Header />
         <Routes>
-          <Route path='/Kanap-React/' element={<Home />} />
-          <Route path='/Kanap-React/product/:id' element={<Product />} />
-          <Route path='/Kanap-React/card' element={<Card />} />
-          <Route path='/Kanap-React/confirmation/:orderId' element={<Confirmation />} />
-          <Route path="*" element={<Navigate replace to="/Kanap-React/" />}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/product/:id' element={<Product />} />
+          <Route path='/card' element={<Card />} />
+          <Route path='/confirmation/:orderId' element={<Confirmation />} />
+          <Route path="*" element={<Navigate replace to="/" />}></Route>
         </Routes>
         <Footer />
       </GlobalContext.Provider>
