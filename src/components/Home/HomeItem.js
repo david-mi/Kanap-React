@@ -8,14 +8,6 @@ const HomeItem = ({ data }) => {
 
   const [picture, setPicture] = useState(null);
 
-  const randomPicture = () => {
-    const arr = Object.keys(imageUrl);
-    const { length } = arr;
-    const nb = Math.round(Math.random() * (length - 1));
-    const img = imageUrl[arr[nb]];
-    setPicture(img);
-  };
-
   useEffect(() => {
     const arr = Object.keys(imageUrl);
     const { length } = arr;

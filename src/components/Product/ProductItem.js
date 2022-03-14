@@ -1,5 +1,6 @@
 // LIBRARIES
 import { useState, useEffect } from 'react';
+import { ScaleLoader } from "react-spinners";
 
 // CSS
 import '../../styles/product.css';
@@ -48,16 +49,20 @@ const ProductItem = ({ data }) => {
   };
 
   useEffect(() => {
-    console.log('color :' + color);
     if (color) {
-      console.log('couleur !!');
-      console.log(imageUrl[color]);
       setImage(imageUrl[color]);
     } else {
-      console.log(colors);
       setImage(imageUrl[colors[0]]);
     }
   }, [color]);
+
+  const cssStyle = `
+  display: block;
+  position: absolute;
+  inset: 0px;
+  background-color: #3498db;
+  text-align: center;
+  `;
 
   return (
     <article>
