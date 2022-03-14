@@ -1,6 +1,6 @@
 // LIBRARIES
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 // COMPONENTS & PAGES
@@ -17,11 +17,6 @@ import GlobalContext from './Context';
 const App = () => {
 
   const [sucessOrder, setSucessOrder] = useState(false);
-
-  useEffect(() => {
-    const { hostname } = window.location;
-    console.log(hostname);
-  }, []);
 
   return (
     <BrowserRouter>

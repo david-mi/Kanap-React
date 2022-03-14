@@ -1,6 +1,5 @@
 // LIBRARIES
 import { useState, useEffect } from 'react';
-import { ScaleLoader } from "react-spinners";
 
 // CSS
 import '../../styles/product.css';
@@ -9,7 +8,6 @@ const ProductItem = ({ data }) => {
 
   const { name, colors, description, imageUrl, price, altTxt } = data;
   const id = data._id;
-  console.log(imageUrl);
 
   const [color, setColor] = useState(colors[0]);
   const [quantity, setQuantity] = useState(1);
@@ -43,7 +41,7 @@ const ProductItem = ({ data }) => {
         : alert(`Canapé ${name} ${color} x${quantity} ajouté au panier`);
     }
     else {
-      alert('Veuillez choisir une couleur une quanitité pour votre produit');
+      alert('Veuillez choisir une couleur et une quantité pour votre produit');
     }
 
   };
@@ -55,14 +53,6 @@ const ProductItem = ({ data }) => {
       setImage(imageUrl[colors[0]]);
     }
   }, [color]);
-
-  const cssStyle = `
-  display: block;
-  position: absolute;
-  inset: 0px;
-  background-color: #3498db;
-  text-align: center;
-  `;
 
   return (
     <article>
